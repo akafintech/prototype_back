@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from config import settings
+from app.core.config import settings
 
 # SQLite 연결 설정
 engine = create_engine(

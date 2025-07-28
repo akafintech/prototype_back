@@ -1,0 +1,10 @@
+from fastapi import APIRouter
+from app.controller.user import user_router
+from app.controller.store import store_router
+from app.controller.review import review_router
+
+router = APIRouter()
+
+router.include_router(user_router, prefix="/user", tags=["user"])
+router.include_router(store_router, prefix="/store", tags=["store"])
+router.include_router(review_router, prefix="/review", tags=["review"])

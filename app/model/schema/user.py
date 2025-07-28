@@ -8,16 +8,23 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
+    phone_number: Optional[str] = None
+    referral_code: Optional[str] = None
 
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
+class ResponseUser(BaseModel):
+    id:int
+
 class User(UserBase):
     id: int
-    is_active: bool
+    phone_number: Optional[str] = None
+    referral_code: Optional[str] = None
     created_at: datetime
-    
+    updated_at: datetime
+
     class Config:
         from_attributes = True
 
