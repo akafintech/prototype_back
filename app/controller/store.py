@@ -4,7 +4,9 @@ from sqlalchemy.orm import Session
 from app.core.auth import verify_token
 from app.core.database import get_db
 from app.model.schema.store import StoreCreate, Store
-from app.crud.store import get_store,get_store_by_name,get_stores,create_store as create_store_crud
+from app.crud.store import (get_store,get_store_by_name,get_stores,get_store_by_business_number,
+                            create_store as create_store_crud,
+                            delete_store as delete_store_crud)
 from app.crud.user import get_user_by_email
 
 store_router = APIRouter()
@@ -77,6 +79,12 @@ def create_store(store: StoreCreate,
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Store name already exists"
         )
+    bs_number_store = get_store_by_business_number(db, business_number=store.business_number)
+    if bs_number_store:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Business number already exists"
+        )
     # Create new store
     new_store = create_store_crud(db, store, db_user.id)
     if not new_store:
@@ -89,13 +97,11 @@ def create_store(store: StoreCreate,
 
 @store_router.delete("/delete/{store_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_store(store_id: int, db: Session = Depends(get_db)):
-    store = db.query(Store).filter(Store.id == store_id).first()
+    store = delete_store_crud(db, store_id)
     if not store:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Store not found"
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to delete store or store not found"
         )
-    
-    db.delete(store)
     
     return {"detail": "Store deleted successfully"}
