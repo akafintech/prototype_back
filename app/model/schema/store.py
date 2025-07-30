@@ -1,11 +1,13 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 
 class StoreBase(BaseModel):
     name: str
-    owner_id: int
+    user_id: int
+    business_number: int
 
-class StoreCreate(StoreBase):
-    pass
+class StoreCreate(BaseModel):
+    name: str
+    business_number: int
 
 class Store(StoreBase):
     id: int

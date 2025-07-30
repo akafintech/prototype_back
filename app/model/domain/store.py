@@ -8,6 +8,7 @@ class Store(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
+    business_number = Column(Integer, unique=True, index=True, nullable=False)
     user_id = Column(Integer, ForeignKey("tb_user.id"), nullable=False)
     user = relationship("User", back_populates="stores")  # 추가
     review = relationship("Review", back_populates="store", cascade="all, delete-orphan")  # 추가
