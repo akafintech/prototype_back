@@ -48,11 +48,6 @@ def list_stores(credentials: HTTPAuthorizationCredentials = Depends(security),
             detail="User not found"
         )   
     stores = get_stores(db,db_user.id)
-    if not stores:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="No stores found"
-        )
     return stores
 
 @store_router.post("/create", response_model=Store)
