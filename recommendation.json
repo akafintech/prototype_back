@@ -4,7 +4,7 @@
       "안녕하세요 00님,00호텔입니다. 방문해주셔서 감사드려요! 또 뵐 수 있길 바랄게요!",
       "안녕하세요 00호텔 찾아주셔서 감사합니다.편히 쉬셨다니 다행이에요!다음에도 찾아주세요",
       "안녕하세요 00님,00호텔입니다.소중한 후기 너무 감사해요 :)즐거운 하루 보내세요~",
-      "안녕하세요저희 00호텔에 소중한 시간 내주셔서 감사해요.즐겁게 머무셨다니 뿌듯합니다!",
+      "안녕하세요저희 00호텔에 소중한 시간 내주셔서 감사해요.즐겁게 머무르셨다니 뿌듯합니다!",
       "안녕하세요좋은 말씀 남겨주셔서 감사합니다!고객님의 리뷰는 저희에게 큰 힘이 돼요!"
     ],
     "long": [
@@ -13,6 +13,22 @@
       "안녕하세요 00님,소중한 여행에 저희 00호텔이 함께할 수 있어 기뻐요 :)다음에도 행복한 추억 만들 수 있도록 준비할게요!늘 건강하고 좋은 하루 되세요!",
       "안녕하세요 00님,만족스러운 투숙 되셨다니 뿌듯합니다!다음 방문엔 더 즐거운 시간 되시도록 정성껏 모실게요 후기 정말 감사드립니다!",
       "안녕하세요 00님,저희 00호텔에서의 시간이 만족스러우셨다니 정말 기쁩니다!다음 여행도 함께하기 바라며 감사의 마음 가득 전합니다!좋은 후기 감사합니다."
+    ]
+  },
+  "casual_en": {
+    "short": [
+      "Hello 00, thank you for visiting 00 Hotel! Hope to see you again!",
+      "Hello, thank you for choosing 00 Hotel. I'm glad you had a comfortable stay! Please visit us again next time.",
+      "Hello 00, thank you so much for your precious review :) Have a wonderful day~",
+      "Hello, thank you for spending your precious time at our 00 Hotel. I'm proud that you enjoyed your stay!",
+      "Hello, thank you for your kind words! Your review gives us great strength!"
+    ],
+    "long": [
+      "Hello 00, thank you so much for choosing our 00 Hotel! I'm proud and happy that you had a comfortable stay. Come back to create more wonderful memories!",
+      "Hello 00, thank you for using 00 Hotel and leaving such a warm review! I hope it remains as a comfortable memory. Please definitely visit us again!",
+      "Hello 00, I'm happy that our 00 Hotel could be part of your precious journey :) I'll prepare to create happy memories next time too! Always stay healthy and have a great day!",
+      "Hello 00, I'm proud that you had a satisfying stay! I'll prepare with sincerity for your next visit to make it even more enjoyable. Thank you so much for your review!",
+      "Hello 00, I'm really happy that you were satisfied with your time at our 00 Hotel! I hope to travel together again and send you my full gratitude! Thank you for the great review."
     ]
   },
   "formal": {
@@ -31,6 +47,22 @@
       "안녕하십니까 00님,00호텔입니다. 편안하게 머무르셨다니 기쁜 마음입니다.소중한 후기는 내부 서비스 개선에 참고하겠습니다.더 나은 서비스로 보답할 수 있도록 하겠습니다."
     ]
   },
+  "formal_en": {
+    "short": [
+      "Hello 00, thank you for staying comfortably. We will respond with better service.",
+      "Hello, this is 00 Hotel. I'm glad you were satisfied with the cleanliness. Thank you for choosing 00 Hotel.",
+      "Hello 00, this is 00 Hotel. I will keep in mind what you mentioned. Thank you.",
+      "Thank you for using our service. We will respond with better service.",
+      "Hello, this is 00 Hotel. Thank you for using our hotel, and we will always do our best."
+    ],
+    "long": [
+      "Hello 00, this is 00 Hotel. I deeply thank you for taking precious time to leave a review. Your satisfaction is a great joy to us. We will continue to provide consistent service in the future.",
+      "Hello 00, I sincerely thank you for using our 00 Hotel and leaving a good evaluation. We will always strive to provide a pleasant environment. I will prepare for your next visit with sincerity.",
+      "Hello, this is 00 Hotel. I offer my deep gratitude for your precious review and rating. I will do my best to be remembered as a trusted service. Have a comfortable day.",
+      "Hello 00, I sincerely thank you for leaving a warm evaluation of 00 Hotel. We will continuously improve to provide even higher satisfaction. Have a healthy and peaceful day.",
+      "Hello 00, this is 00 Hotel. I'm happy that you stayed comfortably. Your precious review will be referenced for internal service improvement. We will strive to provide better service."
+    ]
+  },
   "business": {
     "short": [
       "안녕하세요 00님,00호텔을 이용해주시고 후기도 감사드립니다.다음에도 꼭 찾아주세요.",
@@ -45,6 +77,22 @@
       "귀한 시간 내어 남겨주신 리뷰 감사드립니다.앞으로도 언제나 편안한 휴식 드릴 수 있도록 노력하겠습니다.고객님의 재방문을 기다리겠습니다.",
       "안녕하십니까 00님,00호텔에 따뜻한 평가 남겨주셔서 감사합니다.고객님의 말씀에 힘입어 더욱 나은 서비스 드리겠습니다.항상 정성 다해 준비하겠습니다.감사합니다.",
       "안녕하십니까 00님,00호텔입니다. 편안한 투숙 되셨다니 저희도 기쁩니다.후기는 전 부서에 공유하여 개선에 반영하겠습니다.더 나은 경험 드릴 수 있도록 준비하겠습니다.감사합니다."
+    ]
+  },
+  "business_en": {
+    "short": [
+      "Hello 00, thank you for using 00 Hotel and for your review. Please definitely visit us again.",
+      "Hello, this is 00 Hotel. I'm glad you were satisfied with the cleanliness. Thank you for choosing 00 Hotel.",
+      "Hello 00, thank you for the good rating and precious review. 00 Hotel will always put in our best effort.",
+      "Hello 00, 00 Hotel will prepare to provide satisfaction next time as well. Thank you.",
+      "Hello 00, I'm glad you had a comfortable stay. I hope you will visit 00 Hotel again."
+    ],
+    "long": [
+      "Hello 00, this is 00 Hotel. I sincerely thank you for your precious review. We are also happy that you were satisfied with your stay. We will serve you with our best service next time. Thank you.",
+      "Hello 00, thank you for choosing 00 Hotel. I feel great reward from the satisfaction you felt about your accommodation. We will prepare pleasantly for your next visit. Thank you.",
+      "Thank you for the review you left taking precious time. We will strive to always provide comfortable rest in the future. We look forward to your return visit.",
+      "Hello 00, thank you for leaving a warm evaluation of 00 Hotel. Inspired by your words, we will provide even better service. We will always prepare with our best effort. Thank you.",
+      "Hello 00, this is 00 Hotel. We are also happy that you had a comfortable stay. Your review will be shared with all departments and reflected in improvements. We will prepare to provide a better experience. Thank you."
     ]
   }
 }
