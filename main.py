@@ -1,16 +1,14 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from app.controller import router
 from app.core.database import engine
 from app.model.domain.user import Base
 
-
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Lemong Backend API", version="1.0.0")
+app = FastAPI(title="Lemong Backend API", version="1.0.0",docs_url="/docs", redoc_url="/redoc")
 
 # CORS 설정
 app.add_middleware(
