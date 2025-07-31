@@ -8,7 +8,7 @@ from app.crud.review import (get_reviews_by_store,get_reviews_by_store_names,
                              create_review as create_review_crud,
                             update_review as update_review_crud,    
                              delete_review as delete_review_crud )
-from app.crud.store import get_store_by_name,get_stores
+from app.crud.store import get_store_by_name,get_stores_all
 from app.crud.user import get_user_by_email
 from app.core.auth import verify_token
 
@@ -30,7 +30,7 @@ def get_reviews(store:str,
         )
     db_user = get_user_by_email(db, email=email)
     if store == "전체":
-        stores = get_stores(db, db_user.id)
+        stores = get_stores_all(db)
         names = [store.name for store in stores]
         reviews = get_reviews_by_store_names(db, names, limit=limit, offset=offset)
     else:

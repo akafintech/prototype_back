@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.core.auth import verify_token
 from app.core.database import get_db
 from app.model.schema.store import StoreCreate, Store
-from app.crud.store import (get_store,get_store_by_name,get_stores,get_store_by_business_number,
+from app.crud.store import (get_store,get_store_by_name,get_stores,get_store_by_business_number,get_stores_all,
                             create_store as create_store_crud,
                             delete_store as delete_store_crud)
 from app.crud.user import get_user_by_email
@@ -47,7 +47,7 @@ def list_stores(credentials: HTTPAuthorizationCredentials = Depends(security),
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found"
         )   
-    stores = get_stores(db,db_user.id)
+    stores = get_stores_all(db)
     return stores
 
 @store_router.post("/create", response_model=Store)

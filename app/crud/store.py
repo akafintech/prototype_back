@@ -15,6 +15,9 @@ def get_store_by_business_number(db: Session, business_number: int):
 def get_stores(db: Session,user_id: int):
     return db.query(Store).filter(Store.user_id == user_id).all()
 
+def get_stores_all(db: Session):
+    return db.query(Store).all()
+
 def create_store(db: Session, store: StoreCreate, user_id: int):
     db_store = Store(
         name=store.name,
