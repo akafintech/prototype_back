@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from app.model.domain.review import Review
+from app.model.domain.store import Store
 from app.model.schema.review import ReviewCreate, ReviewUpdate
 
 
@@ -19,6 +20,9 @@ def get_reviews_by_filters(db: Session,limit: int = 10, offset: int = 0, **filte
 
 def get_reviews_by_store(db: Session, store_id: int,limit: int = 10, offset: int = 0):
     return db.query(Review).filter(Review.store_id == store_id).limit(limit).offset(offset).all()
+
+def get_reviews_by_store_names(db: Session, store_names: list[str], limit: int = 10, offset: int = 0):
+    return db.query(Review).join(Store).filter(Store.name.in_(store_names)).limit(limit).offset(offset).all()
 
 def create_review(db: Session, review: ReviewCreate,store_id: int):
     db_review = Review(

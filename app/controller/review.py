@@ -3,12 +3,13 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.model.schema.review import ReviewUpdate,ResponseReview, ReviewCreate
-from app.crud.review import (get_reviews_by_store,
+from app.crud.review import (get_reviews_by_store,get_reviews_by_store_names,
                              get_reviews as get_reviews_crud,
                              create_review as create_review_crud,
                             update_review as update_review_crud,    
                              delete_review as delete_review_crud )
-from app.crud.store import get_store_by_name
+from app.crud.store import get_store_by_name,get_stores
+from app.crud.user import get_user_by_email
 from app.core.auth import verify_token
 
 review_router = APIRouter()
@@ -16,6 +17,8 @@ security = HTTPBearer()
 
 @review_router.get("/list/{store}", response_model=list[ResponseReview])
 def get_reviews(store:str,
+                offset: int = 0,
+                limit: int = 10,
                 credentials: HTTPAuthorizationCredentials = Depends(security),
                 db: Session = Depends(get_db)):
     email = verify_token(credentials.credentials)
@@ -25,8 +28,11 @@ def get_reviews(store:str,
             detail="Could not validate credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
+    db_user = get_user_by_email(db, email=email)
     if store == "전체":
-        reviews = get_reviews_crud(db)
+        stores = get_stores(db, db_user.id)
+        names = [store.name for store in stores]
+        reviews = get_reviews_by_store_names(db, names, limit=limit, offset=offset)
     else:
         db_store = get_store_by_name(db, store)
         if not db_store:
