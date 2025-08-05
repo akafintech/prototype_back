@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60*24
     
+    # OpenAI API 설정
+    openai_api_key: str = "sk-your-actual-openai-api-key-here"
+    
     class Config:
         env_file = ".env"
 
